@@ -1,0 +1,145 @@
+.header{
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+}
+/* =========Logo======== */
+.logo{
+    text-align: center;
+}
+.logo img{
+    width: calc(100% - 60%);
+    object-fit: contain;
+    margin-top: -40px;
+}
+.logo h5 {
+    font-weight: 600;
+    font-size: 1rem;
+    color:  #212245;
+    margin-top: -40px;
+    margin-bottom: 0;
+    
+}
+/* ========Menu======== */
+/* NavLink trung` === a */
+.menu a{
+    font-weight: 600;
+    font-size: 1rem;
+    color: #212245;
+    /* time khi hover màu đỏ hiện lên 0.3s */
+    transition: 0.3s;
+}
+.menu a:hover{
+    color: #df2020;
+}
+.active__menu{
+    color: #df2020 !important;
+}
+/* =======Icon====== */
+.cart__icon i, 
+.user i , 
+.mobile__menu i {
+ font-size: 1.3rem;
+ color: #212245;
+ cursor: pointer;
+}
+.cart__icon {
+    position: relative;
+}
+.cart__badge {
+    position:absolute;
+    /* Chỉnh vị trí của số và vùng background */
+    top:30px;
+    right: -10px;
+    background-color:#df2020;
+    color: black;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    font-weight: 500;
+    /* Đưa số 2 vào vùng background tạo sẵn */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Cài đặt nút 3 gạch */
+.mobile__menu{
+    font-weight: 600;
+    display: none;
+}
+/* Sử dụng để scoll */
+.header__shrink{
+    position: sticky;
+    top: 0;
+    left: 0;
+    background: #fff;
+    /* Chèn  lên trước tất cả mọi thứ */
+    z-index: 9999;
+    box-shadow: 5px 5px 15px -5px #fde4e4;
+}
+/* Khi kéo màn hình <992px */
+@media only screen and (max-width:992px) {
+    .logo img {
+        width: calc(100% - 70%);
+    }
+    .logo h5{
+        font-size: .8rem;
+        margin-top: -15px;
+    }
+    .navigation{
+        /* Điều chỉnh  Navigation */
+        /* Máu chốt khi thu nhỏ màn hình thì navigation hiện lên position: fixed;  */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.534);
+        z-index: 99;
+        /* Bước gần cuối khi điều chỉnh xong thì ẩn nó đi vì khi cần kích vào icon 3 gạch thì mới cần hiện */
+        display: none;
+    }
+    .menu {
+        /* Điều chỉnh menu về nơi hợp lý  */
+        position:absolute;
+        top: 0;
+        right: 0;
+        width: 250px;
+        height: 100%;
+        background-color: #fff;
+        /* Đổi thành kiểu dạng cột */
+       flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 100;
+        line-height: 20px;
+    }
+    .menu a {
+        font-size: 0.9rem;
+    }
+    /* Bước gần cuối Cho hiện lại icon 3 gạch */
+    /* Xuất hiện icon 3 gạch bằng display: none; - display: block; */
+    .mobile__menu{
+        display: block;
+    }
+    .cart__icon i, .user i , .mobile__menu i{
+        font-size: 1rem;
+    }
+    .show__menu{
+        display: block  ;
+    }
+ @media only screen and (max-width:768px) {
+    .header{
+        width: 100%;
+        height: 80px;
+        line-height: 80px;
+    }
+    .logo img{
+        margin-top: -70px !important;
+    }
+    .logo h5 {
+        margin-top: -55px;
+    }
+ }   
+}
